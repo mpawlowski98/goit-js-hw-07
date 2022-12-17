@@ -15,15 +15,15 @@ myGallery.addEventListener("click", (e) => {
   }
 }); // Open Modal
 
-for (let i = 0; i < galleryItems.length; i++) {
+galleryItems.forEach((e) => {
   const image = document.createElement("img");
   const link = document.createElement("a");
   myGallery.append(link);
   link.append(image);
   link.classList.add("gallery__link");
-  link.setAttribute("href", `${galleryItems[i].original}`);
+  link.setAttribute("href", e.original);
   image.classList.add("gallery__image");
-  image.setAttribute("src", `${galleryItems[i].preview}`);
-  image.setAttribute("alt", `${galleryItems[i].description}`);
-  image.dataset.source = `${galleryItems[i].original}`;
-} // lighting galleries
+  image.setAttribute("src", e.preview);
+  image.setAttribute("alt", e.description);
+  image.dataset.source = e.original;
+}); // lighting galleries
